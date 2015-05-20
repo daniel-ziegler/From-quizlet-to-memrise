@@ -27,3 +27,7 @@ der Hund,the dog;der Bleistift,the pencil;der Kuli,the pen;die Katze,the cat;das
 
 #Example output
 der Hund,the dog, , ;der Kuli,the pen, , ;die Katze,the cat, , ;der Stuhl,the chair the stool, , ;das Fenster,the window, , ;
+
+#Screen
+
+http://i.imgur.com/6mcKBRj.png
