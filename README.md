@@ -1,3 +1,7 @@
+#Live access to the script
+
+http://peeping4dsun.github.io/From-quizlet-to-memrise/
+
 #Argumentation
 Using flashcard services as Cram and Quizlet is not very helpful as Memrise is much better.
 
