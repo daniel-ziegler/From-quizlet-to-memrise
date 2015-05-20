@@ -21,6 +21,10 @@
         .button2{
             margin-right: 19px;
         }
+        .under{
+            color: #153331;
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -81,7 +85,7 @@ $(document).ready(function () {
         temp1 = value.slice(0,temp_rf)
         temp2 = value.slice(temp_rf+1,value.length)
         $('.results').html('')
-        $('.results').html(temp1+'<br/><br/>'+temp2)
+        $('.results').html(temp1+'<br/><br/>'+'<span class="under">'+temp2+'</span>')
     }
 
     $('.button1').on('click', function () {
@@ -93,11 +97,6 @@ $(document).ready(function () {
 
     $('.button2').on('click', function () {
         setExport(temp_arr[counter_rf])
-/*        if (counter_rf === 0) {
-            setExport(temp_arr[0])
-        } else {
-            setExport(temp_arr[counter_rf])
-        }*/
         counter_rf++
         showSuggestions(temp_arr[counter_rf])
 
