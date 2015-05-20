@@ -28,6 +28,7 @@ der Hund,the dog;der Bleistift,the pencil;der Kuli,the pen;die Katze,the cat;das
 #Example output
 der Hund,the dog, , ;der Kuli,the pen, , ;die Katze,the cat, , ;der Stuhl,the chair the stool, , ;das Fenster,the window, , ;
 
-#Screen
-
+#Additional info
+- The script is prepared for repeated imports. The confirm button acts as a reset button as well.
+- The favicon at the live script is a tribute to "Duckman" -  a great TV show
 ![alt tag](http://i.imgur.com/6mcKBRj.png)
