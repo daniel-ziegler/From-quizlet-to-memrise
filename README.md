@@ -30,5 +30,5 @@ der Hund,the dog, , ;der Kuli,the pen, , ;die Katze,the cat, , ;der Stuhl,the ch
 
 #Additional info
 - The script is prepared for repeated imports. The confirm button acts as a reset button as well.
-- The favicon at the live script is a tribute to "Duckman" -  a great TV show
+- The favicon is a tribute to TV show I love - "Duckman"
 ![alt tag](http://i.imgur.com/6mcKBRj.png)
