@@ -1,4 +1,4 @@
-#Live access to the script
+#The script is ready to use at:
 
 http://peeping4dsun.github.io/From-quizlet-to-memrise/
 
