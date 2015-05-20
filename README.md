@@ -17,3 +17,7 @@ The bulk add option requires four columns, while exporting from Cram or Quizlet 
 - Click on "Confirm import" button
 - Make a selection of which words you want to export
 - At any time you can take the content of the right text area and use it with Memrise bulk add option.
+#Example input
+der Hund,the dog;der Bleistift,the pencil;der Kuli,the pen;die Katze,the cat;das Heft,the notebook;die Trompete,the trumpet;der Stuhl,the chair, the stool;die Tomate,the tomato;das Hotel,the hotel;das Fenster,the window;der Junge,the boy;die Frau,the married woman;die Fraulein,the unmarried woman, the young woman, the girl;der Elefant,the elephant;der Mann,the man, the young man;die Großeltern,the grandparents;die Großmutter,the grandmother, the grandma;der Großvater,the grandfather, the grandpa;der Vater,the father, the dad;die Mutter,the mother, the mom;die Schwester,the sister;der Bruder,the brother;die Geschwester,the sibling;der Lehrer,the teacher (male);die Lehrerin,the teacher (female);der Schüler,the student (male);die Schülerin,the student (female);die Tür,the door;der Vereinigten Staaten,the United States;das Lied,the song;
+#Example output
+der Hund,the dog, , ;der Kuli,the pen, , ;die Katze,the cat, , ;der Stuhl,the chair the stool, , ;das Fenster,the window, , ;
