@@ -1,40 +1,49 @@
-$(document).ready(function() {
-    var big_data, temp_rf, temp_arr, bacon_rf, counter_rf
-    function parseArray(arr){
-        var temp
-        temp = arr.split(';');
-        return temp
+$(document).ready(function () {
+    var big_data, temp_arr, counter_rf
+
+    function parseArray(arr) {
+        return arr.split(';')
     }
-    function setExport(value){
+
+    function setExport(value) {
         var temp_rf, temp_rf_rf
         temp_rf_rf = value.split(',')
-        temp_rf = temp_rf_rf.filter(function(v,k){
-            return k>0
+        temp_rf = temp_rf_rf.filter(function (v, k) {
+            return k > 0
         })
 
-        $('.export_rf').val($('.export_rf').val() +temp_rf_rf[0]+','+temp_rf.join('')+', ,'+' ;');
+        $('.export_rf').val($('.export_rf').val() + temp_rf_rf[0] + ',' + temp_rf.join('') + ', ,' + ' ;');
     }
-    $('.button1').on('click',function(e){
+
+    function showSuggestions(value) {
+        var temp_rf, temp1, temp2
+        temp_rf = value.indexOf(',')
+        temp1 = value.slice(0,temp_rf)
+        temp2 = value.slice(temp_rf+1,value.length)
+        $('.results').html('')
+        $('.results').html(temp1+'<br/><br/>'+temp2)
+    }
+
+    $('.button1').on('click', function () {
         counter_rf = 0
-        big_data = $('.import_rf').val();
+        big_data = $('.import_rf').val()
         temp_arr = parseArray(big_data)
-        bacon_rf = Bacon.fromArray(temp_arr)
-        $('.results').html(temp_arr[0]);
+        showSuggestions(temp_arr[counter_rf])
     })
 
-    $('.button2').on('click',function(){
-
-        setExport($('.results').html())
+    $('.button2').on('click', function () {
+        setExport(temp_arr[counter_rf])
+/*        if (counter_rf === 0) {
+            setExport(temp_arr[0])
+        } else {
+            setExport(temp_arr[counter_rf])
+        }*/
         counter_rf++
-        temp_rf = temp_arr[counter_rf]
-        $('.results').html('');
-        $('.results').html(temp_rf);
+        showSuggestions(temp_arr[counter_rf])
 
     })
-    $('.button3').on('click',function(){
+    $('.button3').on('click', function () {
         counter_rf++
-        temp_rf = temp_arr[counter_rf]
-        $('.results').html('');
-        $('.results').html(temp_rf);
+        showSuggestions(temp_arr[counter_rf])
     })
 })
