@@ -3,67 +3,109 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>From Quizlet to Memrise</title>
-    <link rel="stylesheet" type="text/css"  href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/css/bootstrap-theme.css">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/css/bootstrap-theme.css">
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/css/bootstrap.css">
+    <link rel="icon" href="http://freetimehub.com/wp-content/uploads/favicon-32x32.png">      
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <style>
+        body {
+            background-color: #c3d6d6;
+        }
+
+        .results {
+            font-family: "Lucida Grande", "Helvetica Nueue", Arial, sans-serif;
+            font-size: 1.2em;
+        }
+        .button2{
+            margin-right: 19px;
+        }
+    </style>
 </head>
 <body>
+<div class="container">
 <div class="row">
     <div class="col-xs-6">
-        <button class="button1">Confirm import Quizlet</button>
         <br>
-        <button class="button2">Yes</button>
-        <button class="button3">No</button>
-        <div class="results"></div>
-        <br>
+
+        <div class="col-md-1"></div>
+        <div class="col-md-5">
+            <button class="button1 btn btn-info">Confirm import</button>
+            <br>
+            <br>
+            <button class="button2 btn btn-success">Yes</button>
+            <button class="button3 btn btn-warning">No</button>
+            <br>
+            <br>
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-5">
+            <div class="results"></div>
+        </div>
+
+    </div>
+    <div class="col-xs-6"></div>
+</div>
+<div class="row">
+    <div class="col-xs-6">
         <textarea class="import_rf" cols="55" rows="22"></textarea>
-        <br>
     </div>
     <div class="col-xs-6">
-        <br>
         <textarea class="export_rf" cols="55" rows="22"></textarea>
-        <br>
     </div>
 </div>
+</div>
 </body>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script>
-  $(document).ready(function() {
-    var big_data, temp_rf, temp_arr, counter_rf
+$(document).ready(function () {
+    var big_data, temp_arr, counter_rf
 
-    function parseArray(arr){
+    function parseArray(arr) {
         return arr.split(';')
     }
 
-    function setExport(value){
+    function setExport(value) {
         var temp_rf, temp_rf_rf
         temp_rf_rf = value.split(',')
-        temp_rf = temp_rf_rf.filter(function(v,k){
-            return k>0
+        temp_rf = temp_rf_rf.filter(function (v, k) {
+            return k > 0
         })
-        $('.export_rf').val($('.export_rf').val() +temp_rf_rf[0]+','+temp_rf.join('')+', ,'+' ;')
+
+        $('.export_rf').val($('.export_rf').val() + temp_rf_rf[0] + ',' + temp_rf.join('') + ', ,' + ' ;');
     }
 
-    $('.button1').on('click',function(){
+    function showSuggestions(value) {
+        var temp_rf, temp1, temp2
+        temp_rf = value.indexOf(',')
+        temp1 = value.slice(0,temp_rf)
+        temp2 = value.slice(temp_rf+1,value.length)
+        $('.results').html('')
+        $('.results').html(temp1+'<br/><br/>'+temp2)
+    }
+
+    $('.button1').on('click', function () {
         counter_rf = 0
         big_data = $('.import_rf').val()
         temp_arr = parseArray(big_data)
-        $('.results').html(temp_arr[0])
+        showSuggestions(temp_arr[counter_rf])
     })
 
-    $('.button2').on('click',function(){
-        setExport($('.results').html())
+    $('.button2').on('click', function () {
+        setExport(temp_arr[counter_rf])
+/*        if (counter_rf === 0) {
+            setExport(temp_arr[0])
+        } else {
+            setExport(temp_arr[counter_rf])
+        }*/
         counter_rf++
-        temp_rf = temp_arr[counter_rf]
-        $('.results').html('')
-        $('.results').html(temp_rf)
+        showSuggestions(temp_arr[counter_rf])
 
     })
-    $('.button3').on('click',function(){
+    $('.button3').on('click', function () {
         counter_rf++
-        temp_rf = temp_arr[counter_rf]
-        $('.results').html('')
-        $('.results').html(temp_rf)
+        showSuggestions(temp_arr[counter_rf])
     })
-})
+})    
 </script>
 </html>
