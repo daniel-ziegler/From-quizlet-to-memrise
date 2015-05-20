@@ -31,5 +31,3 @@ der Hund,the dog, , ;der Kuli,the pen, , ;die Katze,the cat, , ;der Stuhl,the ch
 #Screen
 
 ![alt tag](http://i.imgur.com/6mcKBRj.png)
-
-[ss]:http://i.imgur.com/6mcKBRj.png "Ss"
