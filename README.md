@@ -1,6 +1,6 @@
 ##The script is ready to use at:
 
-http://peeping4dsun.github.io/From-quizlet-to-memrise/
+http://selfrefactor.github.io/From-quizlet-to-memrise/
 
 ##Argumentation
 Using flashcard services as Cram and Quizlet is not very helpful as Memrise is much better.
