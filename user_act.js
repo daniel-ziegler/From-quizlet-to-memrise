@@ -2,12 +2,12 @@ $(document).ready(function () {
     var big_data, temp_arr, counter_rf
 
     function parseArray(arr) {
-        return arr.split(';')
+        return arr.split('\n')
     }
 
     function setExport(value) {
         var temp_rf, temp_rf_rf
-        temp_rf_rf = value.split(',')
+        temp_rf_rf = value.split('\t')
         temp_rf = temp_rf_rf.filter(function (v, k) {
             return k > 0
         })
